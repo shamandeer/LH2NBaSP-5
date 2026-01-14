@@ -30,7 +30,7 @@ public class Target : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (gameManager.isGameActive == true)
+        if (gameManager.isGameActive == true && gameManager.isPaused == false)
         {
             Destroy(gameObject);
             gameManager.UpdateScore(scorePoints);
@@ -44,7 +44,7 @@ public class Target : MonoBehaviour
 
         if (!gameObject.CompareTag("Bad"))
         {
-            gameManager.GameOver();
+            gameManager.ChangeLives(-1);
         }
     }
 
